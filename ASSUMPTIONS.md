@@ -147,7 +147,7 @@ Rationale:
 - `GET /api/application-requests?page=1&size=10&name=xyz&state=CREATED` - List with filters
 - `PATCH /api/application-requests/{id}` - Partially update content
 - `POST /api/application-requests/{id}/verify` - Verify
-- `POST /api/application-requests/{id}/approve` - Approve
+- `POST /api/application-requests/{id}/accept` - Accept
 - `POST /api/application-requests/{id}/reject` - Reject
 - `POST /api/application-requests/{id}/publish` - Publish
 - `DELETE /api/application-requests/{id}` - Delete
@@ -158,7 +158,7 @@ Legacy aliases remain available for compatibility: `/api/requests`, `/api/reques
 - Resource-oriented URLs are easier to understand than action-based endpoints
 - `POST` already implies creation, so `/create` is unnecessary
 - `PATCH` is better than `PUT` for partial updates of a single field such as `body`
-- State transitions are expressed as sub-resources such as `/verify` and `/approve`
+- State transitions are expressed as sub-resources such as `/verify` and `/accept`
 - Query parameters keep listing and filtering concerns explicit and simple
 
 ### 17. HTTP Status Codes

@@ -117,6 +117,27 @@ class ApplicationRequestControllerTest {
     }
 
     @Test
+    void shouldAcceptRequestWithCanonicalEndpointName() {
+        ApplicationRequestDto dto = new ApplicationRequestDto(
+                "id-1",
+                "Test Request",
+                "Test body",
+                ApplicationRequestState.ACCEPTED,
+                null,
+                null,
+                null,
+                LocalDateTime.now(),
+                LocalDateTime.now()
+        );
+        when(service.acceptRequest(eq("id-1"))).thenReturn(dto);
+
+        ResponseEntity<ApplicationRequestDto> response = controller.acceptApplicationRequest("id-1");
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(ApplicationRequestState.ACCEPTED, response.getBody().getState());
+    }
+
+    @Test
     void shouldRejectRequestWithReason() {
         ApplicationRequestDto dto = new ApplicationRequestDto(
                 "id-1",

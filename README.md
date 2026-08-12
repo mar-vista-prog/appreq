@@ -39,7 +39,7 @@ Available endpoints:
 - `GET /api/application-requests/{id}` - get a single request
 - `PATCH /api/application-requests/{id}` - partially update the request body
 - `POST /api/application-requests/{id}/verify` - verify the request
-- `POST /api/application-requests/{id}/approve` - approve the request
+- `POST /api/application-requests/{id}/accept` - accept the request
 - `POST /api/application-requests/{id}/reject` - reject the request
 - `POST /api/application-requests/{id}/publish` - publish the request
 - `DELETE /api/application-requests/{id}` - delete the request

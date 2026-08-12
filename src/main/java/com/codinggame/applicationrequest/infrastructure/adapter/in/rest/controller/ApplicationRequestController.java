@@ -54,7 +54,7 @@ public class ApplicationRequestController {
         return ResponseEntity.ok(requests);
     }
 
-    @PutMapping(path = {"/{id}/body"})
+    @PatchMapping(path = {"/{id}"})
     public ResponseEntity<ApplicationRequestDto> updateApplicationRequestBody(
             @PathVariable String id,
             @Valid @RequestBody UpdateApplicationRequestBodyCommand request) {
@@ -68,7 +68,7 @@ public class ApplicationRequestController {
         return ResponseEntity.ok(verified);
     }
 
-    @PostMapping(path = { "/{id}/accept"})
+    @PostMapping(path = {"/{id}/accept", "/{id}/approve"})
     public ResponseEntity<ApplicationRequestDto> acceptApplicationRequest(@PathVariable String id) {
         ApplicationRequestDto accepted = applicationRequestService.acceptRequest(id);
         return ResponseEntity.ok(accepted);

@@ -24,8 +24,8 @@ Content-Type: application/json
 ### Verify request
 POST http://localhost:8080/api/application-requests/{{requestId}}/verify
 
-### Approve request
-POST http://localhost:8080/api/application-requests/{{requestId}}/approve
+### Accept request
+POST http://localhost:8080/api/application-requests/{{requestId}}/accept
 
 ### Reject request
 POST http://localhost:8080/api/application-requests/{{requestId}}/reject
