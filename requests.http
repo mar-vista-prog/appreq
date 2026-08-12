@@ -1,0 +1,47 @@
+### Create request
+POST http://localhost:8080/api/application-requests
+Content-Type: application/json
+
+{
+  "name": "Moje żądanie",
+  "body": "Treść żądania"
+}
+
+### List requests
+GET http://localhost:8080/api/application-requests?page=1&size=10
+
+### Get request by id
+GET http://localhost:8080/api/application-requests/{{requestId}}
+
+### Update request body
+PATCH http://localhost:8080/api/application-requests/{{requestId}}
+Content-Type: application/json
+
+{
+  "body": "Zaktualizowana treść"
+}
+
+### Verify request
+POST http://localhost:8080/api/application-requests/{{requestId}}/verify
+
+### Approve request
+POST http://localhost:8080/api/application-requests/{{requestId}}/approve
+
+### Reject request
+POST http://localhost:8080/api/application-requests/{{requestId}}/reject
+Content-Type: application/json
+
+{
+  "reason": "Nie spełnia wymagań"
+}
+
+### Publish request
+POST http://localhost:8080/api/application-requests/{{requestId}}/publish
+
+### Delete request
+DELETE http://localhost:8080/api/application-requests/{{requestId}}
+Content-Type: application/json
+
+{
+  "reason": "Przykładowe usunięcie"
+}
